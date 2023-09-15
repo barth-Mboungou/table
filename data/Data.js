@@ -1,91 +1,119 @@
 
 const data=[
-    
- 
-    {   
-        'deplacer':` /image/drop.svg`,
-        'etape':1,
-        'CS':"Préparer le poste de travail",
-        'description de letepe':"",
-        'lien fichier':"",
-        'unite de temps':"Minute",
-        'total temps':2,
-        'temps machine':"",
-        'temp mo':2,
-        'actions':['/image/trash.svg','/image/edit.svg']
+    {  
+        etape:1,
+        cs:"Préparer le poste de travail",
+        description_de_letape:"",
+        lien_fichier:"",
+        unite_de_temps:"Minute",
+        total_temps:14,
+        temps_ma:"",
+        temps_mo:2,
 
     },
 
     {
-        'deplacer':` /image/drop.svg`,
-        'etape':2,
-        'CS':"Préparer le poste de travail",
-        'description de letepe':"",
-        'lien fichier':"",
-        'unite de temps':"Minute",
-        'total temps':2,
-        'temps machine':"",
-        'temp mo':2,
-        'actions':['/image/trash.svg','/image/edit.svg']
+        etape:2,
+        cs:"Préparer le poste de travail",
+        description_de_letape:"",
+        lien_fichier:"",
+        unite_de_temps:"Minute",
+        total_temps: 2,
+        temps_ma:"",
+        temps_mo: 16,
+        // actions:[{type: 'delete', icon: '/image/trash.svg'}, {type: 'delete', icon: '/image/edit.svg'}]
 
     },
 
     {
-        'deplacer':` /image/drop.svg`,
-        'etape':3,
-        'CS':"Préparer le poste de travail",
-        'description de letepe':"",
-        'lien fichier':"",
-        'unite de temps':"Minute",
-        'total temps':2,
-        'temps machine':"",
-        'temp mo':2,
-        'actions':['/image/trash.svg','/image/edit.svg']
+        etape:3,
+        cs:"Préparer le poste de travail",
+        description_de_letape:"",
+        lien_fichier:"",
+        unite_de_temps:"Seconde",
+        total_temps:2,
+        temps_ma:"",
+        temps_mo:2,
 
     },
 
     {
-        'deplacer':` /image/drop.svg`,
-        'etape':4,
-        'CS':"Préparer le poste de travail",
-        'description de letepe':"",
-        'lien fichier':"",
-        'unite de temps':"Minute",
-        'total temps':2,
-        'temps machine':"",
-        'temp mo':2,
-        'actions':['/image/trash.svg','/image/edit.svg']
+        etape:4,
+        cs:"Préparer le poste de travail",
+        description_de_letape:"",
+        lien_fichier:"",
+        unite_de_temps:"Minute",
+        total_temps:20,
+        temps_ma:"",
+        temps_mo:2,
 
     },
 
     {
-        'deplacer':` /image/drop.svg`,
-        'etape':5,
-        'CS':"Préparer le poste de travail",
-        'description de letepe':"",
-        'lien fichier':"",
-        'unite de temps':"Minute",
-        'total temps':2,
-        'temps machine':"",
-        'temp mo':2,
-        'actions':['/image/trash.svg','/image/edit.svg']
+        etape:5,
+        cs:"Préparer le poste de travail",
+        description_de_letape:"",
+        lien_fichier:"",
+        unite_de_temps:"Minute",
+        total_temps:2,
+        temps_ma:"",
+        temps_mo:2,
 
     }
     
  ];
- const cols=
+ const cols= [
     {
-        "deplacer":``,
-        "etape":"",
-        "CS":"",
-        "description de letepe":"",
-        "lien fichier":"",
-        "unite de temps":"",
-        "total temps":'',
-        "temps machine":"",
-        "temp mo":'',
-        "actions":''
+        name:"deplacer",
+        id:"deplacer",
+        label:'Deplacer'
     }
+    ,{
+        name:"etape",
+        id:"etape",
+        label:"etape",
+    },
+    {
+        name:"cs",
+        id:"cs",
+        label:"cs",
+    },
+    {
+        name:"description_de_letape",
+        id:"description_de_letape",
+        label:"Description de l'etape",
+    },
+    {
+        name:"lien_fichier",
+        id:"lien_fichier",
+        label:"Lien fichier",
+    },
+    {
+        name:"unite_de_temps",
+        id:"unite_de_temps",
+        label:"Unite de temps",
+    },
+    {
+        name:"total_temps",
+        id:"total_temps",
+        label:"Total temps",
+    },
+    {
+        name:"temps_machine",
+        id:"temps_ma",
+        label:"temps machine",
+    },
+    {
+        name:"temps_mo",
+        id:"temps_mo",
+        label:"temps mo",
+    },
+    {
+        name:"actions",
+        id:"actions",
+        label:"actions",
+    }
+]
 
 // const times = {
 //     "total temps": (e)=> {
