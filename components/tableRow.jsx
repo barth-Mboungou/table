@@ -2,47 +2,47 @@ import Image from "next/image";
 import { Children } from "react";
 
 const TableRow = (props) => {
+
+  const row = props.data;
+  const cols = props.cols;
+
   return (
     <>
-      {props.data.map((row) => (
-       
-        <> {console.log(row)}
-          <tr key={row.id} className={props.className}>
-          <td key={row.id} className="pl-[10px] pr-0 flex py-4 ">
-              <button key={row.id}>
-                <Image src=' /image/drop.svg' width={25} height={25} alt="" />
-              </button>
-            </td>
-            {Object.values(row).map((cell, cellIndex) => (
+      <tr key={props.key} className={props.className} draggable ='true'>
+        <td className="py-4 px-3 flex   gap-x-6">
+          <button className="">
+            <Image src=" /image/drop.svg" width={25} height={25} alt="" />
+          </button>
+        </td>
+        {cols.map((cell, cellIndex) => {
+          if (cell.id in row) {
+            return (
               <td
                 key={cellIndex}
-                draggable="true"
                 className=" text-[#000000de] p-4"
               >
-                {cell}
+                {row[cell.id]}
               </td>
-            ))}
-            <td key={row.id} className="py-4 pl-[10px] pr-0 flex gap-x-6">
+            );
+          }
+        })}
+        <td className="py-4 pl-[10px] pr-3 flex justify-end  gap-x-6">
+          {row.children && (
+            <button>
+              <Image src="/image/plus-circle-blue.49fd18f1.svg" width={25} height={25} alt="" />
+            </button>
+          )}
+          <button>
+            <Image src="/image/edit.svg" width={25} height={25} alt="" />
+          </button>
+          <button>
+            <Image src="/image/trash.svg" width={25} height={25} alt="" />
+          </button>
 
-              <button key={row.id}>
-                <Image src='/image/trash.svg' width={25} height={25} alt="" />
-              </button>
-              {
-                row.children && (
-
-                    <button key={row.id}>
-                        <Image src='/image/edit.svg' width={25} height={25} alt="" />
-                    </button>
-               )
-              }
-              <button key={row.id}>
-                <Image src='/image/edit.svg' width={25} height={25} alt="" />
-              </button>
-            </td>
-          </tr>
-          <>{props.children}</>
-        </>
-      ))}
+          
+        </td>
+      </tr>
+      <>{props.children}</>
     </>
   );
 };

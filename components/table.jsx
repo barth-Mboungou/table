@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import TableRow from "./tableRow";
 
-const Table = ({ datas = ["undefined"], columns }) => {
+const Table = ({ datas, columns }) => {
   const [rows, setRows] = useState(datas);
-  const [cols, setCols] = useState(columns)
+  const [cols, setCols] = useState(columns);
   const [total, setTotal] = useState({
     total_temps: 0,
     temps_mo: 0,
@@ -45,7 +45,7 @@ const Table = ({ datas = ["undefined"], columns }) => {
 
     setTotal(updatedTotal);
   }, [datas, cols]);
- 
+
   return (
     <>
       <table className="table-auto w-[96%] mx-auto my-6 px-6 text-left shadow-sm">
@@ -60,40 +60,45 @@ const Table = ({ datas = ["undefined"], columns }) => {
         </thead>
 
         <tbody className="text-[16px] font-sans">
-        
+          {rows.length > 0 ? (
+            rows.map((row, index) => {
+              // console.log(row?.children)
 
-          {
-            rows.length > 0 
-            ? (
-              rows.map((row, index) => {
-                return (
-                  
-                  <TableRow data={rows} key = {index} className ='bg-[#e5e7eb] "hover:bg-gray-100"' >
-                    {/* <td className="text-center py-3 bg-blue-300 text-white" colSpan={100}>Enfant</td> */}
-                    <TableRow data ={rows} />
-                  </TableRow>
-                  
-                );
-              })
-            ) 
-            : <div>{`aucune donnée n'a été trouvée`}</div>
-          } 
-          
+              return (
+                <TableRow
+                  data={row}
+                  cols={cols}
+                  key={index}
+                  className='font-medium  hover:bg-gray-100'
+                >
+                  {row.children.map((child, childIndex) => (
+                    <TableRow data={child} cols={cols} key={childIndex} className='italic' />
+                  ))}
+                </TableRow>
+              );
+            })
+          ) : (
+            <div>{`aucune donnée n'a été trouvée`}</div>
+          )}
         </tbody>
         <tfoot className="bg-white">
           <tr className="shadow-sm">
-            {
-              rows.length > 0 && cols.map((col,idcol) =>{
-                  if( col.id === 'total_temps' || col.id === 'temps_ma' || col.id === "temps_mo"){
-                   
-                      return <td key = {idcol} className="py-4 pl-[10px] pr-0">{total[col.id]} Minute(s)</td>  
-                  }
-                  else{
-                      return <td key = {idcol} className="py-4 pl-[10px] pr-0"></td>  
-
-                  }
-              })
-            }         
+            {rows.length > 0 &&
+              cols.map((col, idcol) => {
+                if (
+                  col.id === "total_temps" ||
+                  col.id === "temps_ma" ||
+                  col.id === "temps_mo"
+                ) {
+                  return (
+                    <td key={idcol} className="py-4 pl-[10px] pr-0">
+                      {total[col.id]} Minute(s)
+                    </td>
+                  );
+                } else {
+                  return <td key={idcol} className="py-4 pl-[10px] pr-0"></td>;
+                }
+              })}
           </tr>
         </tfoot>
       </table>

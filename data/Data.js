@@ -9,6 +9,7 @@ const data=[
         total_temps:14,
         temps_ma:"",
         temps_mo:2,
+        children :[]
 
     },
 
@@ -21,6 +22,7 @@ const data=[
         total_temps: 2,
         temps_ma:"",
         temps_mo: 16,
+        children :[]
         // actions:[{type: 'delete', icon: '/image/trash.svg'}, {type: 'delete', icon: '/image/edit.svg'}]
 
     },
@@ -34,6 +36,7 @@ const data=[
         total_temps:2,
         temps_ma:"",
         temps_mo:2,
+        children :[]
 
     },
 
@@ -46,6 +49,19 @@ const data=[
         total_temps:20,
         temps_ma:"",
         temps_mo:2,
+        children :[
+            {
+                etape:1,
+                cs:"Préparer le poste de travail",
+                description_de_letape:"",
+                lien_fichier:"",
+                unite_de_temps:"Minute",
+                total_temps:14,
+                temps_ma:"",
+                temps_mo:2,
+            }
+        ]
+        
 
     },
 
@@ -58,6 +74,7 @@ const data=[
         total_temps:2,
         temps_ma:"",
         temps_mo:2,
+        children :[]
 
     }
     
