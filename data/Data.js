@@ -9,7 +9,18 @@ const data=[
         total_temps:14,
         temps_ma:"",
         temps_mo:2,
-        children :[]
+        children :[
+            {
+            etape:1,
+            cs:"Préparer le poste de travail",
+            description_de_letape:"",
+            lien_fichier:"",
+            unite_de_temps:"Minute",
+            total_temps:14,
+            temps_ma:"",
+            temps_mo:2,
+            }
+        ]
 
     },
 
@@ -22,7 +33,18 @@ const data=[
         total_temps: 2,
         temps_ma:"",
         temps_mo: 16,
-        children :[]
+        children :[
+            {
+                etape:2,
+                cs:"Préparer le poste de travail",
+                description_de_letape:"",
+                lien_fichier:"",
+                unite_de_temps:"Minute",
+                total_temps:14,
+                temps_ma:"",
+                temps_mo:2,
+            }
+        ]
         // actions:[{type: 'delete', icon: '/image/trash.svg'}, {type: 'delete', icon: '/image/edit.svg'}]
 
     },
@@ -36,7 +58,18 @@ const data=[
         total_temps:2,
         temps_ma:"",
         temps_mo:2,
-        children :[]
+        children :[
+            {
+                etape:3,
+                cs:"Préparer le poste de travail",
+                description_de_letape:"",
+                lien_fichier:"",
+                unite_de_temps:"Minute",
+                total_temps:14,
+                temps_ma:"",
+                temps_mo:2,
+                }
+        ]
 
     },
 
@@ -51,7 +84,7 @@ const data=[
         temps_mo:2,
         children :[
             {
-                etape:1,
+                etape:4,
                 cs:"Préparer le poste de travail",
                 description_de_letape:"",
                 lien_fichier:"",
@@ -74,7 +107,18 @@ const data=[
         total_temps:2,
         temps_ma:"",
         temps_mo:2,
-        children :[]
+        children :[
+            {
+                etape:5,
+                cs:"Préparer le poste de travail",
+                description_de_letape:"",
+                lien_fichier:"",
+                unite_de_temps:"Minute",
+                total_temps:14,
+                temps_ma:"",
+                temps_mo:2,
+                }
+        ]
 
     }
     
@@ -131,26 +175,6 @@ const data=[
         label:"actions",
     }
 ]
-
-// const times = {
-//     "total temps": (e)=> {
-//         let sum = 0;
-//         if (unit === 'seconde') {
-//             return acc + value
-//         } else if (unit === 'heure') {
-//             return acc + value * 3600 // Convert hours to seconds
-//         } else { // Assume unit is 'Minute'
-//             return acc + value * 60 // Convert minutes to seconds
-//         }
-//         return sum
-//     }
-//     "temps machine":() => {
-
-//     },
-//     "temp mo":() => {
-
-//     }
-// }
 export {
     data,
     cols

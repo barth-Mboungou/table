@@ -62,17 +62,16 @@ const Table = ({ datas, columns }) => {
         <tbody className="text-[16px] font-sans">
           {rows.length > 0 ? (
             rows.map((row, index) => {
-              // console.log(row?.children)
-
               return (
                 <TableRow
+                  etape ={index}
                   data={row}
                   cols={cols}
                   key={index}
                   className='font-medium  hover:bg-gray-100'
                 >
                   {row.children.map((child, childIndex) => (
-                    <TableRow data={child} cols={cols} key={childIndex} className='italic' />
+                    <TableRow data={child}  etape ={childIndex} cols={cols} key={childIndex} className='italic' />
                   ))}
                 </TableRow>
               );
